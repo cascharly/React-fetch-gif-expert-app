@@ -17,20 +17,22 @@ describe("Prueba de <GifGrid />", () => {
   });
 
   test("debe de mostrar items cuando se cargan imagenes useFetchGifs", () => {
-
-    const gifs = [{
-        id:'ABC',
-        url:'http://localhost:3000/',
-        title: 'Cualquier cosa'
-    }]
+    const gifs = [
+      {
+        id: "123",
+        url: "http://localhost:3000/",
+        title: "Cualquier cosa",
+      },
+    ];
 
     useFetchGifs.mockReturnValue({
-        data: [],
-        loading: false,
-      });
+      data: gifs,
+      loading: false,
+    });
 
     const wrapper = shallow(<GifGrid category={category} />);
-
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find("p").exists()).toBe(false);
+    expect(wrapper.find('GifGridItem').length).toBe(gifs.length)
   });
 });

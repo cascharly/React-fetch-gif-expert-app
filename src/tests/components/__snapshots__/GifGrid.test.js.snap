@@ -9,7 +9,14 @@ exports[`Prueba de <GifGrid /> debe de mostrar items cuando se cargan imagenes u
   </h3>
   <div
     className="card-grid"
-  />
+  >
+    <GifGridItem
+      id="123"
+      key="123"
+      title="Cualquier cosa"
+      url="http://localhost:3000/"
+    />
+  </div>
 </Fragment>
 `;
 
